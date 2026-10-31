@@ -1,0 +1,12 @@
+{
+  "valid": {
+    "username": "alex",
+    "password": "DemoPass123!",
+    "id": "customer-001",
+    "displayName": "Alex Morgan"
+  },
+  "invalid": {
+    "username": "not-a-customer",
+    "password": "Incorrect123!"
+  }
+}

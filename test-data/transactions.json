@@ -1,0 +1,47 @@
+[
+  {
+    "id": "txn-5001",
+    "description": "Monthly salary",
+    "date": "2026-10-28",
+    "type": "Credit",
+    "amount": 3250.00,
+    "status": "Completed",
+    "accountId": "acct-1001"
+  },
+  {
+    "id": "txn-5002",
+    "description": "Northstar Market",
+    "date": "2026-10-27",
+    "type": "Debit",
+    "amount": 86.43,
+    "status": "Completed",
+    "accountId": "acct-1001"
+  },
+  {
+    "id": "txn-5003",
+    "description": "Transfer to savings",
+    "date": "2026-10-25",
+    "type": "Debit",
+    "amount": 500.00,
+    "status": "Completed",
+    "accountId": "acct-1001"
+  },
+  {
+    "id": "txn-5004",
+    "description": "Savings interest",
+    "date": "2026-10-24",
+    "type": "Credit",
+    "amount": 12.50,
+    "status": "Completed",
+    "accountId": "acct-2001"
+  },
+  {
+    "id": "txn-5005",
+    "description": "Transfer from checking",
+    "date": "2026-10-25",
+    "type": "Credit",
+    "amount": 500.00,
+    "status": "Completed",
+    "accountId": "acct-2001"
+  }
+]

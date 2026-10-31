@@ -1,0 +1,20 @@
+[
+  {
+    "id": "acct-1001",
+    "name": "Everyday Checking",
+    "type": "Checking",
+    "maskedNumber": "•••• 4821",
+    "currency": "USD",
+    "balance": 4285.72,
+    "status": "Active"
+  },
+  {
+    "id": "acct-2001",
+    "name": "Growth Savings",
+    "type": "Savings",
+    "maskedNumber": "•••• 9076",
+    "currency": "USD",
+    "balance": 12750.00,
+    "status": "Active"
+  }
+]
