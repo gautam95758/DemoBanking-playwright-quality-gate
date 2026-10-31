@@ -1,6 +1,6 @@
-# Northstar Demo Banking - Playwright Quality Gate
+# Demo Banking - Playwright Quality Gate
 
-A local fictional banking dashboard and an executable Playwright quality gate. The Express application and all demo data run on the developer machine; no bank, payment service, or production system is contacted.
+A local fictional banking dashboard and an executable Playwright quality gate. The Express application and all demo data run on the developer machine; no bank, payment service, or production system is involved.
 
 ## Technology
 
@@ -62,11 +62,11 @@ docs/                    Architecture, strategy, API, and demo documentation
 
 ## Known limitations
 
-This is a test demonstration, not production banking software. Authentication uses a random in-memory session token and a single hard-coded synthetic user; sessions disappear when the server restarts. Data is static and in memory. There is no database, CSRF protection, rate limiting, real account access, or production-grade identity/security model. Account numbers are masked and balances/transactions are fictional. The page uses system fonts and makes no runtime external asset requests.
+This is a test demonstration, not production banking software. Authentication uses a random in-memory session token and a single hard-coded synthetic user; sessions disappear when the server restarts.
 
 ## GitHub Actions CI pipeline
 
-The workflow at `.github/workflows/playwright.yml` runs the complete Playwright quality gate on pushes, pull requests, and manual dispatch. It installs Node.js dependencies and Chromium, runs UI and API tests, and uploads the HTML report and test artifacts even if tests fail.
+The workflow at `.github/workflows/playwright.yml` runs the complete Playwright quality gate on pushes, pull requests, and manual dispatch. It installs Node.js dependencies and Chromium, runs UI and API checks, then uploads the HTML report as an artifact.
 
 To enable it:
 1. Push this project to a GitHub repository.
@@ -75,4 +75,4 @@ To enable it:
 4. Push a commit or open a pull request to trigger the pipeline.
 5. Open the workflow run and download the `playwright-report` artifact to inspect results.
 
-The workflow currently uses `npm install` so it can run before a lockfile has been generated. For reproducible CI, run `npm install` locally, commit the generated `package-lock.json`, then change the workflow install step to `npm ci`.
+The workflow currently uses `npm install` so it can run before a lockfile has been generated. For reproducible CI, run `npm install` locally, commit the generated `package-lock.json`, then change the workflow to use `npm ci`.
