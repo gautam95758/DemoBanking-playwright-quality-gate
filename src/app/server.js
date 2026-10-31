@@ -11,7 +11,7 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/health', (_request, response) => {
-  response.status(200).json({ status: 'ok', service: 'demo-banking' });
+  response.status(200).json({ status: 'ok', service: 'northstar-demo-banking' });
 });
 
 app.post('/api/auth/login', (request, response) => {
