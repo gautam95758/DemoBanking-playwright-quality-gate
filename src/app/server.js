@@ -11,7 +11,7 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/health', (_request, response) => {
-  response.status(200).json({ status: 'ok', service: 'northstar-demo-banking' });
+  response.status(200).json({ status: 'ok', service: 'demo-banking' });
 });
 
 app.post('/api/auth/login', (request, response) => {
@@ -67,5 +67,5 @@ app.post('/api/auth/logout', requireAuthentication, (request, response) => {
 });
 
 app.listen(port, '127.0.0.1', () => {
-  console.log(`Northstar Demo Banking listening at http://127.0.0.1:${port}`);
+  console.log(`Demo Banking listening at http://127.0.0.1:${port}`);
 });

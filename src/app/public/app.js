@@ -3,7 +3,7 @@ const loginView = document.querySelector('#login-view');
 const dashboardView = document.querySelector('#dashboard-view');
 const loginForm = document.querySelector('#login-form');
 const loginError = document.querySelector('#login-error');
-const tokenKey = 'northstar-demo-token';
+const tokenKey = 'demo-banking-token';
 
 async function request(path, options = {}) {
   const token = localStorage.getItem(tokenKey);
@@ -36,7 +36,7 @@ function renderDashboard(user, accountData, transactionData) {
   const accountById = new Map(accountData.accounts.map((account) => [account.id, account]));
   document.querySelector('#account-list').innerHTML = accountData.accounts.map((account) => `
     <article class="account-card" aria-label="${account.name}">
-      <div class="account-card-top"><div><h3>${account.name}</h3><span class="account-id">${account.id} · ${account.type}</span></div><span class="account-glyph" aria-hidden="true">${account.type === 'Checking' ? '↗' : '＋'}</span></div>
+      <div class="account-card-top"><div><h3>${account.name}</h3><span class="account-id">${account.id} · ${account.type}</span></div><span class="account-glyph" aria-hidden="true">${account.type[0]}</span></div>
       <p class="account-balance" data-testid="account-balance-${account.id}">${currency.format(account.balance)}</p>
       <div class="account-card-bottom"><span class="account-number">${account.maskedNumber}</span><span class="status-pill">${account.status}</span></div>
     </article>`).join('');
@@ -45,7 +45,7 @@ function renderDashboard(user, accountData, transactionData) {
     const account = accountById.get(transaction.accountId);
     const sign = transaction.type === 'Credit' ? '+' : '−';
     return `<tr data-transaction-id="${transaction.id}">
-      <td>${transaction.description}</td><td><time datetime="${transaction.date}">${new Date(`${transaction.date}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</time></td>
+      <td>${transaction.description}</td><td><time datetime="${transaction.date}">${new Date(`${transaction.date}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time></td>
       <td>${account ? account.name : transaction.accountId}</td><td>${transaction.status}</td>
       <td class="amount-cell"><span class="transaction-amount" data-testid="transaction-amount-${transaction.id}">${sign}${currency.format(transaction.amount)}</span><span class="transaction-type">${transaction.type}</span></td>
     </tr>`;
